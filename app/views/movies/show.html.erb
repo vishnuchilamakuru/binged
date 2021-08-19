@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header">
+    <%= @movie.title %>  
+  </div>
+
+  <div class="card-body">
+    <p>      
+      <h5 class="card-title">
+        <strong>Title:</strong>
+        <%= @movie.title %>
+      </h5>
+    </p>
+
+    <p>      
+      <h5 class="card-title">
+        <strong>Status:</strong>
+        <%= @movie.status.humanize %>
+      </h5>
+    </p>
+
+    <p>      
+      <h5 class="card-title">
+        <strong>Released On:</strong>
+        <%= @movie.release_date.to_formatted_s %>
+      </h5>
+    </p>
+
+    <% if @movie.watched? %>
+      <p>      
+        <h5 class="card-title">
+          <strong>Watched On:</strong>
+          <%= @movie.watched_date.to_formatted_s %>
+        </h5>
+      </p>
+    <% end %>
+
+    <p>
+      <strong>Trailer : </strong>
+      <h5 class="card-title">        
+          <iframe width="460" height="315" src="<%= @movie.trailer_url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </h5>
+    </p>
+
+    <p>
+      <strong>Image : </strong>
+      <h5 class="card-title">        
+        <img  width="300" height="300" src="<%= @movie.image_url %>"/>
+      </h5>
+    </p>
+
+  </div>
+</div>  
+
+<br/>
+
+<%= link_to 'Edit', edit_movie_path(@movie) , class: "btn btn-outline-primary theme-btn"%> |
+<%= link_to 'Back', movies_path , class: "btn btn-outline-primary theme-btn"%>
+
+<br/><br/>

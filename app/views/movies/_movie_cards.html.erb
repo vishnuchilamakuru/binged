@@ -1,0 +1,28 @@
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <% movies.each do |movie| %>
+    <div class="card border-dark" style="width: 25rem;">
+      <!-- <img src="<%= movie.image_url %>" class="card-img-top" alt="<%= movie.title %>"> -->
+      <br/>
+      <h5 class="card-title">        
+          <iframe width="370" height="300" src="<%= movie.trailer_url %>" title="YouTube video player" frameborder="0" allow=" accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </h5> 
+      <div class="card-body">
+        <h5 class="card-title"><a href="<%= movie.movie_url%>" style="color: #800080;"><%= movie.title %></a></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Release Date : </strong><%= movie.release_date.strftime('%d-%b-%Y') %></li>
+          <% if movie.watched? %>
+            <li class="list-group-item"><strong>Watched On : </strong><%= movie.watched_date.strftime('%d-%b-%Y') %></li>
+          <% end %>
+      </ul>
+      <div class="card-body">
+        <%= link_to 'Show', movie, class: "card-link", style: "color: #800080;" %>
+        <%= link_to 'Edit', edit_movie_path(movie) , class: "card-link", style: "color: #800080;" %>
+        <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" , style: "color: #800080;" %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br/>

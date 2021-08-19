@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<% if Movie.yet_to_watch.length > 0 %>
+  <%= render 'movies/card_section_title', section: "Your Movies Watchlist" %>
+  <%= render 'movies/movie_cards', movies: Movie.yet_to_watch %>
+<% end %>
+
+<% if Movie.watching.length > 0 %>
+  <%= render 'movies/card_section_title', section: "Movies You Are Watching Now" %>
+  <%= render 'movies/movie_cards', movies: Movie.watching %>
+<% end %>
+
+<% if Movie.watched.length > 0 %>
+  <%= render 'movies/card_section_title', section: "Movies You Watched" %>
+  <%= render 'movies/movie_cards', movies: Movie.watched %>
+<% end %>
+
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path , class: "btn theme-btn" %>
