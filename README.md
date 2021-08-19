@@ -1,4 +1,4 @@
-## Binged - Your Movie Tracker Built on Ruby on Rails
+## Binged - Your Movie Watch Tracker Built on Ruby on Rails
 
 I personally do watch Movies, Web series, TV shows, Sports, etc... The consumption of online video content increased drastically, especially during the pandemic considering more people working from home. In this post, I will explain how to build a basic Binge-Watch Tracker to track the progress of all your movies.
 
